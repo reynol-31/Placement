@@ -3,18 +3,19 @@ package Tasks;
 public class Tk11 {
     public static void main(String[] args) {
         int arr[]={1,2,3,4,5};
+        int p=0;
+        int sum=0;
         for (int i = 0; i < arr.length; i++) {
-            boolean prime=true;
-            if(arr[i]==1)
-                prime=false;
-            for(int j=2;j<arr.length;j++){
-                if(arr[i]%j==0){
-                    prime=false;
-                }
+            for(int j=1;j<=arr[i];j++){
+                if(arr[i]%j==0)
+                    p++;
             }
-            if(prime){
-                System.out.println(arr[i]);
+            if(p==2){
+                System.out.println(arr[i]+" ");
+                sum+=arr[i];
             }
+            p=0;
         }
+        System.out.println(sum);
     }
 }
