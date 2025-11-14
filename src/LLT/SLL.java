@@ -1,29 +1,27 @@
-package LinkedList;
-
+package LLT;
 class Node {
-    String data;
+    float data;
     Node next;
 
-    Node(String data) {
+    Node(float data) {
         this.data = data;
     }
 }
-class SLL{
+
+class SLL {
     public static void main(String[] args) {
-        Node head=new Node("Mister A");
-        Node sec=new Node("Mister B");
-        Node third=new Node("Mister c");
-        Node tail=new Node("Mister D");
+        Node head=new Node(10.2f);
+        Node sec=new Node(10.2f);
+        Node tail=new Node(10.3f);
 
         head.next=sec;
-        sec.next=third;
-        third.next=tail;
+        sec.next=tail;
         tail.next=null;
         dis(head);
     }
     public static void dis(Node head){
         Node n=head;
-        while (n!=null) {
+        while(n!=null){
             System.out.print(n.data+"->");
             n=n.next;
         }
