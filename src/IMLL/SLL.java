@@ -47,11 +47,28 @@ class SLL {
             System.out.println("No");
         }
     }
+    public void del(int val){
+        if(head.data==val){
+            head=head.next;
+        }else{
+            Node n=head;
+            while(n.next!=null&&n.next.data!=val){
+                n=n.next;
+            }
+            if (n.next!=null) {
+                n.next=n.next.next;
+            }
+        }
+    }
     public static void main(String[] args) {
         SLL o=new SLL();
         o.insert(10);
         o.insert(20);
+        o.insert(30);
+        o.insert(40);
         o.display();
         o.search(100);
+        o.del(30);
+        o.display();
     }
 }
